@@ -1964,7 +1964,7 @@ App::save_settings()
 		{
 			std::string filename=get_config_file("language");
 
-			std::ofstream file(filename.c_str());
+			std::ofstream file(FileSystemNative::path(filename).c_str());
 
 			if(!file)
 			{
@@ -1976,7 +1976,7 @@ App::save_settings()
 		do{
 			std::string filename=get_config_file("recentfiles");
 
-			std::ofstream file(filename.c_str());
+			std::ofstream file(FileSystemNative::path(filename).c_str());
 
 			if(!file)
 			{
@@ -2062,7 +2062,7 @@ App::load_file_window_size()
 		synfig::ChangeLocale change_locale(LC_NUMERIC, "C");
 		{
 			std::string filename=get_config_file("recentfiles");
-			std::ifstream file(filename.c_str());
+			std::ifstream file(FileSystemNative::path(filename).c_str());
 
 			while(file)
 			{
@@ -2089,7 +2089,7 @@ App::load_language_settings()
 		synfig::ChangeLocale change_locale(LC_NUMERIC, "C");
 		{
 			std::string filename=get_config_file("language");
-			std::ifstream file(filename.c_str());
+			std::ifstream file(FileSystemNative::path(filename).c_str());
 
 			while(file)
 			{
